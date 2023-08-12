@@ -1,9 +1,11 @@
-Eksplorasi dataset CSE-CIC-IDS2018
-
-Dataset yang digunakan dalam penelitian ini adalah dataset CSE-CIC-IDS2018 yang
-dibuat khusus untuk melatih model pada IDS berbasis anomali dan diunduh melalui cloud
-Amazon Web Services (AWS) [42]. Dataset ini dibuat oleh Communications Security
-Establishment (CSE) dan Canadian Institute of Cyber Security (CIC) pada tahun 2018,
-terdiri dari 10 file dengan format CSV dan PCAP. File dengan format CSV digunakan
-dalam penelitian ini, file CSV ini memiliki total ukuran sebesar 6,72 Gigabyte. Dengan
-rincian seperti pada Tabel 3.1.
+#Eksplorasi dataset CSE-CIC-IDS2018
+Dataset yang digunakan adalah dataset CSE-CIC-IDS2018 yang dibuat khusus untuk melatih model pada IDS berbasis anomali dan diunduh melalui cloud Amazon Web Services (AWS).
+Untuk menunduh dataset ini dilakukan dengan
+1. Instal AWS CLI dapat diunduh dari https://aws.amazon.com/cli/, tersedia untuk Mac, Windows, dan Linux 
+2. Jalankan: aws s3 sync --no-sign-request --region <your-region> "s3://cse-cic-ids2018/" dest-dir (Di mana  wilayah Anda adalah wilayah Anda dari daftar wilayah AWS  dan tujuan -dir adalah nama folder tujuan yang diinginkan di mesin Anda)
+Dataset ini dibuat oleh Communications Security Establishment (CSE) dan Canadian Institute of Cyber Security (CIC) pada tahun 2018, terdiri dari 10 file dengan format CSV dan PCAP. File dengan format CSV digunakan dalam penelitian ini, file CSV ini memiliki total ukuran sebesar 6,72 Gigabyte. Dengan rincian seperti pada Tabel 3.1.
+Dataset ini mempunyai lebih dari 16 juta sampel dengan 79 fitur pada sembilan file dan 83 fitur pada satu file, dengan penjelasan fitur secara rinci tercantum pada Lampiran 1. Sekitar 83% merupakan data lalu lintas normal dan sekitar 17% merupakan data lalu lintas serangan, yang terdiri dari 14 kelas target. Distribusi lalu lintas jaringan pada masing – masing kelas ditunjukkan pada Tabel 3.2. Selain itu, pada Tabel 3.3 ditunjukkan distribusi persentase lalu lintas jaringan yang dikategorikan menurut tujuh jenis lalu lintas jaringan pada dataset CSE-CIC-IDS2018.
+Pada dataset ini, digunakan aliran lalu lintas jaringan. Aliran lalu lintas jaringan berisi paket-paket yang dikelompokkan dalam satu periode tertentu, memberikan gambaran aktivitas pada jaringan antara sumber dan tujuan dengan menggunakan protokol TCP dan UDP. Setiap data aliran lalu lintas dikelompokkan berdasarkan IP sumber, IP tujuan, port 22 Universitas Indonesia sumber, port tujuan, dan protokol. Data aliran lalu lintas TCP diakhiri dengan paket FIN bernilai 1, sementara untuk data aliran lalu lintas UDP diakhiri dengan batas waktu (flow timeout) tertentu, batas waktu aliran ini juga berlaku untuk data aliran lalu lintas TCP.
+Saat memuat dataset menggunakan pustaka Pandas, secara default tipe data setiap fitur ditetapkan secara otomatis, seperti yang ditampilkan pada Gambar 3.2. Tetapi, ini dapat mengkonsumsi banyak memori, mencapai 14,1 Gigabyte. Oleh karena itu diperlukan untuk mengubah tipe data yang sesuai pada setiap fitur saat memuat dataset bertujuan untuk mengoptimalkan penggunaan memori.
+Penetapan tipe data dilakukan dengan melihat nilai minimum dan maksimum pada setiap fitur, kecuali fitur yang memiliki NaN. Tipe data ditetapkan secara manual saat memuat dataset, dapat dilihat pada Gambar 3.3. Dengan penetapan tipe data ini penggunaan memori berkurang menjadi 7,9 Gigabyte, mengurangi penggunaan memori hingga 44%. Penetapan tipe data secara rinci dapat dilihat pada Lampiran 2.
+Sebagai contoh penetapan tipe data, untuk fitur Protocol, nilai minimumnya adalah 0 dan nilai maksimum adalah 17, sehingga tipe data int64 dapat diturunkan menjadi int8 tanpa kehilangan informasi. Seperti yang ditampilkan pada Gambar 3.4, konsumsi memori dari semula 129,86 MegaByte menjadi 16,23 MegaByte, ini mengurangi penggunaan memori hingga 87%.
