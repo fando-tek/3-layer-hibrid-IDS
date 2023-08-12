@@ -1,4 +1,4 @@
-#Eksplorasi dataset CSE-CIC-IDS2018
+# Eksplorasi dataset CSE-CIC-IDS2018
 Dataset yang digunakan adalah dataset CSE-CIC-IDS2018 yang dibuat khusus untuk melatih model pada IDS berbasis anomali dan diunduh melalui cloud Amazon Web Services (AWS).
 Untuk menunduh dataset ini dilakukan dengan
 1. Instal AWS CLI dapat diunduh dari https://aws.amazon.com/cli/, tersedia untuk Mac, Windows, dan Linux 
