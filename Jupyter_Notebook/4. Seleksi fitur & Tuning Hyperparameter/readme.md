@@ -2,8 +2,7 @@
 ![Seleksi fitur](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/23ec8fe5-3917-44fb-8eec-b01a9ecda91c)
 \
 Seleksi fitur dilakukan dengan menggunakan alur seperti gambar diatas, terdapat 32 kombinasi fitur terpilih yang berbeda yang dihasilkan dari empat dataset dengan rasio 1:1, 2:1, 3:1 dan 5:1, dimana masing-masing dataset memiliki 8 kombinasi fitur terpilih.
-Data latih yang telah dinormalisasi digunakan untuk memilih fitur dengan dua metode yaitu metode filter menggunakan algoritma Chi-square dan metode embedded menggunakan algoritma Random Forest. 
-Pada penelitian ini, digunakan jumlah persentase skor sebesar 95% dan 99% sebagai ambang batas. Skor diurutkan dari yang terbesar, kemudian dijumlahkan hingga jumlah skor membentuk besaran persentase skor ≤ 95% atau ≤ 99%. Fitur – fitur yang membentuk besaran persentase ini dipilih untuk digunakan dalam pembangunan model. Sedangkan  fitur – fitur dengan sisa persentase skor 5 % atau 1% merupakan fitur dengan skor rendah, fitur – fitur ini dihapus. 
+Data latih yang telah dinormalisasi digunakan untuk memilih fitur dengan dua metode yaitu Chi-square dan Random Forest dan jumlah persentase skor sebesar 95% dan 99% sebagai ambang batas. Skor diurutkan dari yang terbesar, kemudian dijumlahkan. Fitur – fitur yang membentuk besaran persentase skor ≤ 95% atau ≤ 99% dipilih untuk digunakan dalam pembangunan model. Sedangkan  fitur – fitur dengan sisa persentase skor 5 % atau 1%, fitur – fitur ini dihapus.
 Total terdapat 8 kombinasi fitur terpilih berdasarkan kombinasi pengaturan berikut ini:
 1.	Metode Chi-square, vektor target biner, ambang batas skor 95%
 2.	Metode Chi-square, vektor target biner, ambang batas skor 99%
