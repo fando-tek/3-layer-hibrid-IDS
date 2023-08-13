@@ -5,7 +5,8 @@ Hasil evaluasi dari setiap kombinasi nilai hyperparameter diperoleh dengan mengh
 Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur terpilih yang didapat dari tahap seleksi fitur. Dengan demikian, terdapat 24 kali tuning pada setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1), sehingga total dilakukan 96 kali tuning pada keempat dataset, menghasilkan 96 kombinasi nilai hyperparameter.
 Setelah mendapatkan 96 kombinasi nilai hyperparameter, f1-score dari kombinasi nilai hyperparameter dibandingkan pada setiap lapisan dari masing-masing dataset dengan rasio 1:1, 2:1, 3:1 dan 5:1. Satu lapisan terdiri dari 8 kombinasi hyperparameter yang dibandingkan untuk memilih satu kombinasi nilai hyperparameter yang memiliki nilai f1-score tertinggi. 
 Total terdapat 12 kombinasi nilai hyperparameter yang dipilih untuk membangun model yang kemudian digunakan pada empat model hibrid, dimana satu model hibrid membutuhkan tiga model. Pemilihan kombinasi nilai hyperparameter berdasarkan nilai f1-score tertinggi, disebabkan dataset yang digunakan adalah dataset yang tidak seimbang sehingga metrik pengukuran yang lebih baik adalah f1-score yang merupakan harmonisasi antara nilai precision dan nilai recall.
-Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi :
+Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. 
+#### Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi :
 ```
 - hidden layer/unit  = 16, 32, 48, 64
 - learning rate      = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
