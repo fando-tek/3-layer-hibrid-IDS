@@ -4,7 +4,7 @@ Pada tahap ini, dilakukan penggabungan dataset menjadi satu dataset kemudian dis
 ## 2. Praproses Data
 Tahapan selanjutnya adalah praproses data. Praproses data melalui serangkaian tahapan seperti integrasi data, transformasi data, pembersihan data, dan pengambilan sampel data yang bertujuan untuk memperoleh dataset dalam bentuk yang dibutuhkan untuk membangun model. Gambar diatas menunjukkan alur tahapan praproses data yang digunakan dalam penelitian ini.\
 \
-- Pertama menghapus duplikat baris header yang memiliki nama yang sama.
+- Menghapus duplikat baris header yang memiliki nama yang sama.
 - Nama fitur dalam dataset juga diubah menjadi huruf kecil yang dihubungkan dengan garis bawah (underscore) untuk memudahkan akses fitur dalam dataset.
 - Protokol yang digunakan dalam penelitian ini adalah TCP dan UDP, sehingga nilai protokol selain 6 (TCP) dan 17 (UDP) dihapus dari dataset.
 - Dataset yang digunakan juga mengandung nilai tak terhingga (infinity) dan nilai yang hilang. Untuk menangani masalah ini, nilai infinity diubah menjadi NaN dan fitur (kolom) dihapus pada fitur yang memiliki nilai NaN lebih dari 50%, sedangkan sampel data (baris) dihapus pada fitur yang memiliki nilai NaN kurang dari 50%.
