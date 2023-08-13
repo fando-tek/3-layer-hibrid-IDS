@@ -6,13 +6,13 @@ Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur ter
 Setelah mendapatkan 96 kombinasi nilai hyperparameter, f1-score dari kombinasi nilai hyperparameter dibandingkan pada setiap lapisan dari masing-masing dataset dengan rasio 1:1, 2:1, 3:1 dan 5:1. Satu lapisan terdiri dari 8 kombinasi hyperparameter yang dibandingkan untuk memilih satu kombinasi nilai hyperparameter yang memiliki nilai f1-score tertinggi. 
 Total terdapat 12 kombinasi nilai hyperparameter yang dipilih untuk membangun model yang kemudian digunakan pada empat model hibrid, dimana satu model hibrid membutuhkan tiga model. Pemilihan kombinasi nilai hyperparameter berdasarkan nilai f1-score tertinggi, disebabkan dataset yang digunakan adalah dataset yang tidak seimbang sehingga metrik pengukuran yang lebih baik adalah f1-score yang merupakan harmonisasi antara nilai precision dan nilai recall.
 Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi :
-'''
+```
 - hidden layer/unit    = 16, 32, 48, 64
 -	learning rate	     = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
 -	dropout		     = 0.1, 0.2, 0.3, 0.4, 0.5
 -	epoch		     = 10, 20, 30, 40
 -	batch size	     = 256, 512, 1024, 2048
-'''
+```
 dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut:
 - activation	     = sigmoid
 - Optimizers	     = Adam
