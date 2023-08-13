@@ -1,24 +1,27 @@
-Setelah melalui tahapan seleksi fitur, tahap selanjutnya adalah tuning hyperparameter. Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model dengan hasil yang optimal. Tuning hyperparameter dilakukan dengan teknik random grid search untuk menghemat waktu dan biaya komputasi. Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation). Dalam 5 fold cross validation, data dibagi menjadi 5 fold berukuran kira-kira sama, sehingga memiliki 5 subset data untuk mengevaluasi kinerja model, 4 subset data digunakan untuk pelatihan dan 1 subset data digunakan untuk pengujian seperti pada Gambar 3.6. Hasil evaluasi dari setiap kombinasi nilai hyperparameter diperoleh dengan menghitung nilai rata – rata  f1-score  dari cross validation. 
-Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur terpilih yang didapat dari tahap seleksi fitur seperti yang dibahas pada subbab 3.5. Dengan demikian, terdapat 24 kali tuning pada setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1), sehingga total dilakukan 96 kali tuning pada keempat dataset.
-Pada setiap tuning, digunakan random grid search untuk dilakukan pengambilan kombinasi nilai hyperparameter secara acak sebanyak 15 kali. Kombinasi hyperparameter yang dipilih sebanyak 15, dievaluasi dengan validasi silang 5 lipatan, menghasilkan 15 kombinasi nilai hyperparameter yang berbeda dengan nilai rata – rata f1-score dari cross validation. Selanjutnya, dari 15 kombinasi nilai hyperparameter tersebut, dipilih satu kombinasi nilai hyperparameter terbaik dengan nilai rata – rata f1-score tertinggi untuk dilakukan pelatihan dan evaluasi ulang. Sehingga dari 96 kali tuning, menghasilkan 96 kombinasi nilai hyperparameter.
-Setelah mendapatkan 96 kombinasi nilai hyperparameter, f1-score dari kombinasi nilai hyperparameter dibandingkan pada setiap lapisan dari masing-masing dataset dengan rasio 1:1, 2:1, 3:1 dan 5:1. Satu lapisan terdiri dari 8 kombinasi hyperparameter yang dibandingkan untuk memilih satu kombinasi nilai hyperparameter yang memiliki nilai f1-score tertinggi seperti pada Gambar 3.7. Total terdapat 12 kombinasi nilai hyperparameter yang dipilih untuk membangun model yang kemudian digunakan pada empat model hibrid, dimana satu model hibrid membutuhkan tiga model. Pemilihan kombinasi nilai hyperparameter berdasarkan nilai f1-score tertinggi, disebabkan dataset yang digunakan adalah dataset yang tidak seimbang sehingga metrik pengukuran yang lebih baik adalah f1-score yang merupakan harmonisasi antara nilai precision dan nilai recall.
-Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi jumlah hidden layer/unit, learning rate, dropout, epoch, dan batch size, dengan rentang nilai hyperparameter sebagai berikut:
-●	hidden layer/unit    = 16, 32, 48, 64
-●	learning rate	     = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
-●	dropout		     = 0.1, 0.2, 0.3, 0.4, 0.5
-●	epoch		     = 10, 20, 30, 40
-●	batch size	     = 256, 512, 1024, 2048
+## Tuning Hyperparameter
+Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model dengan hasil yang optimal dengan teknik random grid search untuk menghemat waktu dan biaya komputasi. 
+Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation). Dalam 5 fold cross validation, data dibagi menjadi 5 fold berukuran kira-kira sama, sehingga memiliki 5 subset data untuk mengevaluasi kinerja model, 4 subset data digunakan untuk pelatihan dan 1 subset data digunakan untuk pengujian.
+Hasil evaluasi dari setiap kombinasi nilai hyperparameter diperoleh dengan menghitung nilai rata – rata  f1-score dari cross validation. 
+Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur terpilih yang didapat dari tahap seleksi fitur. Dengan demikian, terdapat 24 kali tuning pada setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1), sehingga total dilakukan 96 kali tuning pada keempat dataset, menghasilkan 96 kombinasi nilai hyperparameter.
+Setelah mendapatkan 96 kombinasi nilai hyperparameter, f1-score dari kombinasi nilai hyperparameter dibandingkan pada setiap lapisan dari masing-masing dataset dengan rasio 1:1, 2:1, 3:1 dan 5:1. Satu lapisan terdiri dari 8 kombinasi hyperparameter yang dibandingkan untuk memilih satu kombinasi nilai hyperparameter yang memiliki nilai f1-score tertinggi. 
+Total terdapat 12 kombinasi nilai hyperparameter yang dipilih untuk membangun model yang kemudian digunakan pada empat model hibrid, dimana satu model hibrid membutuhkan tiga model. Pemilihan kombinasi nilai hyperparameter berdasarkan nilai f1-score tertinggi, disebabkan dataset yang digunakan adalah dataset yang tidak seimbang sehingga metrik pengukuran yang lebih baik adalah f1-score yang merupakan harmonisasi antara nilai precision dan nilai recall.
+Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi :
+- hidden layer/unit    = 16, 32, 48, 64
+-	learning rate	     = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
+-	dropout		     = 0.1, 0.2, 0.3, 0.4, 0.5
+-	epoch		     = 10, 20, 30, 40
+-	batch size	     = 256, 512, 1024, 2048
 dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut:
-●	activation	     = sigmoid
-●	Optimizers	     = Adam
-●	Loss		     = binary_crossentropy
+- activation	     = sigmoid
+- Optimizers	     = Adam
+- Loss		     = binary_crossentropy
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
-Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi estimators, max features, max depth, min samples split, dan min samples leaf , dengan rentang nilai hyperparameter sebagai berikut :
-●	estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
-●	max features	     = 5, 9, 12, 15, 18
-●	max depth	     = None, 5, 10, 15, 20, 25, 30, 35
-●	min samples split   = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-●	min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
+- estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
+- max features	     = 5, 9, 12, 15, 18
+- max depth	     = None, 5, 10, 15, 20, 25, 30, 35
+- min samples split   = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.
 Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi. Proses ini dilakukan secara terpisah dari proses tuning untuk mengurangi waktu pemilihan kombinasi nilai hyperparameter dengan random grid search.
 Tahap tuning hyperparameter dilakukan dengan random grid search untuk mendapatkan nilai hyperparameter yang menghasilkan model dengan f1-score tertinggi. Proses tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur di setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1). Sehingga, terdapat 8 kombinasi nilai hyperparameter pada setiap lapisan, dan 24 kombinasi nilai hyperparameter pada setiap dataset, total didapatkan 96 kombinasi nilai hyperparameter berbeda dari keempat dataset. Hasil rinci 96 kombinasi nilai hyperparameter ini dapat dilihat pada Lampiran 5.
