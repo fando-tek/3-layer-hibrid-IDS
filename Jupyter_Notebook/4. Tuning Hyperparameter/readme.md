@@ -22,7 +22,7 @@ dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut
 ```
 
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
-Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
+##### Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
 - estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
 - max features	     = 5, 9, 12, 15, 18
 - max depth	     = None, 5, 10, 15, 20, 25, 30, 35
