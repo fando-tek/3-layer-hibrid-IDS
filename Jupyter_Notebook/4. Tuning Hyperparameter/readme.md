@@ -26,7 +26,7 @@ Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 - max features	     = 5, 9, 12, 15, 18
 - max depth	     = None, 5, 10, 15, 20, 25, 30, 35
 - min samples split   = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20\
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.
 Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi. Proses ini dilakukan secara terpisah dari proses tuning untuk mengurangi waktu pemilihan kombinasi nilai hyperparameter dengan random grid search.
 Tahap tuning hyperparameter dilakukan dengan random grid search untuk mendapatkan nilai hyperparameter yang menghasilkan model dengan f1-score tertinggi. Proses tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur di setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1). Sehingga, terdapat 8 kombinasi nilai hyperparameter pada setiap lapisan, dan 24 kombinasi nilai hyperparameter pada setiap dataset, total didapatkan 96 kombinasi nilai hyperparameter berbeda dari keempat dataset. Hasil rinci 96 kombinasi nilai hyperparameter ini dapat dilihat pada Lampiran 5.
