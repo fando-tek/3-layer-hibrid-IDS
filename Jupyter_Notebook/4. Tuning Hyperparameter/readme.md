@@ -14,9 +14,11 @@ Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghin
 -	batch size	     = 256, 512, 1024, 2048
 ```
 dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut:
+```
 - activation	     = sigmoid
 - Optimizers	     = Adam
 - Loss		     = binary_crossentropy
+```
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
 - estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
