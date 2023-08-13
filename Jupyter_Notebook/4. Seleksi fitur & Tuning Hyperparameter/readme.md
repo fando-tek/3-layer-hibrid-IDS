@@ -5,6 +5,7 @@ Seleksi fitur dilakukan dengan menggunakan alur seperti gambar diatas, terdapat 
 \
 Seleksi fitur menggunakan metode Chi-square dan Random Forest. Jumlah persentase skor sebesar 95% dan 99% digunakan sebagai ambang batas. Skor diurutkan dari yang terbesar, kemudian dijumlahkan. Fitur – fitur yang membentuk besaran persentase skor ≤ 95% atau ≤ 99% dipilih untuk digunakan dalam pembangunan model. Sedangkan  fitur – fitur dengan sisa persentase skor 5 % atau 1%, fitur – fitur ini dihapus.
 Total terdapat 8 kombinasi fitur terpilih berdasarkan kombinasi pengaturan berikut ini:
+```
 1.	Metode Chi-square, vektor target biner, ambang batas skor 95%
 2.	Metode Chi-square, vektor target biner, ambang batas skor 99%
 3.	Metode Chi-square, vektor target multikelas, ambang batas skor 95%
@@ -13,7 +14,7 @@ Total terdapat 8 kombinasi fitur terpilih berdasarkan kombinasi pengaturan berik
 6.	Metode Random Forest, vektor target biner, ambang batas skor 99%
 7.	Metode Random Forest, vektor target multikelas, ambang batas skor 95%
 8.	Metode Random Forest, vektor target multikelas, ambang batas skor 99%
-
+```
 ## Tuning Hyperparameter
 Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model optimal menggunakan teknik random grid search. Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation).\
 ![Tuning Hyper](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/d4588aeb-63ea-4019-ba02-e70a8d8965f8)
