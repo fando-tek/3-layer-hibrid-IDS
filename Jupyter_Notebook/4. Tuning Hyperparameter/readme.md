@@ -32,6 +32,6 @@ Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.\
 Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi. Proses ini dilakukan secara terpisah dari proses tuning untuk mengurangi waktu pemilihan kombinasi nilai hyperparameter dengan random grid search.\
 \
-Selama tahap tuning, total pembangunan model yang dilakukan sebanyak 7200 model (4 dataset x 8 kombinasi fitur x 3 lapisan x 15 kombinasi hyperparameter x 5 cross validation) seperti yang di tunjukkan pada Gambar 4.4. Selain itu, total waktu yang dibutuhkan selama tahap tuning sebesar 3527341 detik (979 jam, 49 menit, 1 detik).\
+Selama tahap tuning, total pembangunan model yang dilakukan sebanyak 7200 model dan total waktu yang dibutuhkan selama tahap tuning sebesar 3527341 detik (979 jam, 49 menit, 1 detik).\
 \
  ![Tuning Hyperparameter](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/093decc0-fbb5-4f0f-aff1-f75fabf13a0f)
