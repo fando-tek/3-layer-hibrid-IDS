@@ -8,10 +8,10 @@ Total terdapat 12 kombinasi nilai hyperparameter yang dipilih untuk membangun mo
 Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. Pada lapisan pertama LSTM, hyperparameter yang digunakan dalam tuning meliputi :
 ```
 - hidden layer/unit    = 16, 32, 48, 64
--	learning rate	     = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
--	dropout		     = 0.1, 0.2, 0.3, 0.4, 0.5
--	epoch		     = 10, 20, 30, 40
--	batch size	     = 256, 512, 1024, 2048
+- learning rate	     = 0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1
+- dropout		     = 0.1, 0.2, 0.3, 0.4, 0.5
+- epoch		     = 10, 20, 30, 40
+- batch size	     = 256, 512, 1024, 2048
 ```
 dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut:
 ```
