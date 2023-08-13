@@ -1,5 +1,4 @@
-![Praproses](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/cabeebd5-efd6-4e55-8751-149b4c62f722)
-### Gambar alur tahapan praproses data
+![Praproses data](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/c1dd3547-4d5e-4cb4-a8d4-6fac1d6f9821)
 ## 1. Menggabungkan semua dataset CIC2018 menjadi 1 Dataset
 Pada tahap ini, dilakukan penggabungan dataset menjadi satu dataset kemudian disimpan dalam format CSV. Setelah itu, dataset yang telah digabungkan di muat kembali untuk selanjutnya dilakukan tahapan praproses lainnya.
 ## 2. Praproses Data
