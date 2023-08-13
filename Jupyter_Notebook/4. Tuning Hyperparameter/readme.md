@@ -1,4 +1,6 @@
 ## Tuning Hyperparameter
+![Tuning Hyper](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/2468c100-5f24-4e41-ae01-9d3f326c4e25)
+
 Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model optimal menggunakan teknik random grid search. Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation).\
 Hasil evaluasi dari setiap kombinasi nilai hyperparameter diperoleh dengan menghitung nilai rata – rata  f1-score dari cross validation. Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur terpilih yang didapat dari tahap seleksi fitur. Dengan demikian, terdapat 24 kali tuning pada setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1), sehingga total dilakukan 96 kali tuning pada keempat dataset, menghasilkan 96 kombinasi nilai hyperparameter.\
 \
