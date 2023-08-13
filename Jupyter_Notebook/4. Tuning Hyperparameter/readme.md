@@ -22,12 +22,14 @@ dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut
 ```
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 #### Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
+```
 - estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
 - max features	     = 5, 9, 12, 15, 18
 - max depth	     = None, 5, 10, 15, 20, 25, 30, 35
 - min samples split   = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20\
-Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.
+- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+```
+Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.\
 Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi. Proses ini dilakukan secara terpisah dari proses tuning untuk mengurangi waktu pemilihan kombinasi nilai hyperparameter dengan random grid search.
 Tahap tuning hyperparameter dilakukan dengan random grid search untuk mendapatkan nilai hyperparameter yang menghasilkan model dengan f1-score tertinggi. Proses tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur di setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1). Sehingga, terdapat 8 kombinasi nilai hyperparameter pada setiap lapisan, dan 24 kombinasi nilai hyperparameter pada setiap dataset, total didapatkan 96 kombinasi nilai hyperparameter berbeda dari keempat dataset. Hasil rinci 96 kombinasi nilai hyperparameter ini dapat dilihat pada Lampiran 5.
 Pada setiap proses tuning menggunakan random grid search, dipilih secara acak 15 kombinasi nilai hyperparameter dari rentang nilai yang telah ditentukan. Setiap kombinasi nilai hyperparameter dievaluasi dengan validasi silang 5 lipatan (5-fold cross validation), dan dihitung rata-rata f1-score dari hasil validasi tersebut. Dari 15 kombinasi nilai hyperparameter, diperoleh 15 nilai rata-rata f1-score yang kemudian diurutkan dari nilai tertinggi. Selanjutnya, dipilih satu kombinasi nilai hyperparameter yang menghasilkan f1-score tertinggi, untuk kemudian dibandingkan dengan lainnya. 
