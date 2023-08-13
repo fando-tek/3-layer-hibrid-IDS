@@ -21,11 +21,11 @@ Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 #### Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
 Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi.
 ```
-- estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
-- max features	     = 5, 9, 12, 15, 18
-- max depth	     = None, 5, 10, 15, 20, 25, 30, 35
-- min samples split   = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
-- min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+- estimators        = 10, 15, 20, 25, 30, 35, 40, 45, 50
+- max features      = 5, 9, 12, 15, 18
+- max depth         = None, 5, 10, 15, 20, 25, 30, 35
+- min samples split = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+- min samples leaf  = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 ```
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.\
 \
