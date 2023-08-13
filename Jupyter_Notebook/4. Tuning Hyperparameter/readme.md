@@ -19,6 +19,7 @@ dan hyperparameter yang ditetapkan tanpa dilakukan tuning adalah sebagai berikut
 ```
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 #### Pada lapisan kedua dan lapisan ketiga dengan Random Forest, hyperparameter yang digunakan meliputi :
+Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi.
 ```
 - estimators 	     = 10, 15, 20, 25, 30, 35, 40, 45, 50
 - max features	     = 5, 9, 12, 15, 18
@@ -27,7 +28,6 @@ Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari TensorFlow.
 - min samples leaf    = 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20
 ```
 Sedangkan hyperparameter lainnya ditetapkan ke nilai default dari scikit-learn.\
-Sebelum dilakukan tuning pada lapisan kedua dan ketiga, terlebih dahulu mencari jumlah decision trees/estimators yang sesuai, jumlah decision trees dipilih berdasarkan nilai f1-score tertinggi.\
 \
 Selama tahap tuning, total pembangunan model yang dilakukan sebanyak 7200 model dan total waktu yang dibutuhkan selama tahap tuning sebesar 3527341 detik (979 jam, 49 menit, 1 detik).\
 \
