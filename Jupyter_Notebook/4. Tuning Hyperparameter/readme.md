@@ -1,5 +1,5 @@
 ## Tuning Hyperparameter
-Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model dengan hasil yang optimal dengan teknik random grid search untuk menghemat waktu dan biaya komputasi. Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation).\
+Tuning hyperparameter bertujuan untuk mendapatkan nilai hyperparameter yang memberikan model optimal menggunakan teknik random grid search. Random grid search memilih secara acak kombinasi nilai hyperparameter yang telah ditentukan. Setiap kombinasi nilai hyperparameter dilakukan validasi silang 5 lipatan (5-fold cross validation).\
 Hasil evaluasi dari setiap kombinasi nilai hyperparameter diperoleh dengan menghitung nilai rata – rata  f1-score dari cross validation. Tuning hyperparameter dilakukan pada 3 lapisan menggunakan 8 kombinasi fitur terpilih yang didapat dari tahap seleksi fitur. Dengan demikian, terdapat 24 kali tuning pada setiap dataset dari 4 dataset yang berbeda (dataset rasio 1:1, 2:1, 3:1, dan 5:1), sehingga total dilakukan 96 kali tuning pada keempat dataset, menghasilkan 96 kombinasi nilai hyperparameter.\
 \
 Tuning hyperparameter dilakukan hanya pada beberapa hyperparameter untuk menghindari biaya komputasi yang mahal. 
