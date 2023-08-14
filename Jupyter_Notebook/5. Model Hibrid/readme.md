@@ -11,5 +11,5 @@ Pada tahap ini, dilakukan pembangunan model pada setiap lapisan dari masing-masi
 - Pada lapisan dua, digunakan algoritma RF untuk klasifikasi dua kelas (biner) dengan label attack menyatakan kelas serangan dan label benign menyatakan kelas normal.
 - Pada lapisan tiga, digunakan algoritma RF tetapi diklasifikasikan secara multi kelas dengan label benign, ddos attack hoic, ddos attacks loic http, dos attacks hulk, bot, ftp bruteforce, ssh bruteforce, infilteration, dos attacks slowhttptest, dos attacks goldeneye, dos attacks slowloris, ddos attack loic udp, brute force web, brute force xss, dan sql injection.
 ```
-\
+
 Total di ketiga lapisan sebanyak 12 model dibangun dan terdapat empat model hibrid yang masing-masing merupakan gabungan tiga model. Keempat model hibrid ini di evaluasi kinerjanya dan hasilnya dibandingkan.
