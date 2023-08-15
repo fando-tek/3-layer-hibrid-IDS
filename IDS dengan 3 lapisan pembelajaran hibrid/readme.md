@@ -2,11 +2,7 @@
 Untuk menguji kinerja model hibrid maka digunakan IDS yang dimodifikasi dari CICflowmeter berbasis python. IDS ini hanya digunakan untuk tujuan simulasi dan tidak digunakan secara langsung untuk menangani serangan yang sebenarnya. 
 IDS digunakan untuk melakukan analisis dan klasifikasi pada aliran lalu lintas. Aliran lalu lintas merupakan kumpulan dari beberapa paket yang saling terkait, memiliki kuintupel yang sama, yaitu IP sumber, IP tujuan, port sumber, port tujuan, dan protokol. Jika analisis dan klasifikasi dilakukan secara offline, IDS akan dihentikan setelah selesai menganalisis dan mengklasifikasikan semua aliran lalu lintas pada file PCAP. Sedangkan jika dilakukan secara real time, IDS akan terus melakukan analisis dan klasifikasi tanpa batasan waktu. 
 Untuk menguji kinerja IDS secara offline, digunakan data lalu lintas serangan hasil simulasi yang ditangkap melalui Wireshark, kemudian dianalisis dan diklasifikasikan. Sedangkan untuk menguji kinerja IDS secara real time, dilakukan simulasi serangan jaringan yang ditargetkan langsung pada perangkat yang menjalankan IDS tanpa perlu menggunakan wireshark. 
-Simulasi serangan menggunakan dua perangkat yang berada dalam jaringan yang sama, yaitu perangkat korban (yang ditargetkan) dan penyerang. Penyerang menggunakan sistem operasi Kali Linux, sedangkan perangkat yang ditargetkan menggunakan sistem operasi Ubuntu. 
-4.8.1	Pengujian IDS secara offline
-Pengujian IDS secara offline, dilakukan menggunakan Kali Linux untuk menghasilkan lalu lintas normal dan serangan (DoS, brute force dan probe) yang kemudian di lihat hasilnya. Tabel 4.29 menunjukkan keberhasilan IDS dengan model hibrid mengklasifikasikan lalu lintas normal dan serangan. 
-4.8.2	Pengujian IDS secara real time
-Pengujian IDS dengan menggunakan pembelajaran mesin hibrid juga dilakukan secara real time, dimana serangan dilakukan dari sistem Kali Linux (penyerang) yang menyerang sistem Ubuntu (korban). Data lalu lintas normal dan serangan ditangkap oleh IDS dan langsung dianalisis untuk diklasifikasikan.\
+Simulasi serangan menggunakan dua perangkat yang berada dalam jaringan yang sama, yaitu perangkat korban (yang ditargetkan) dan penyerang. Penyerang menggunakan sistem operasi Kali Linux, sedangkan perangkat yang ditargetkan menggunakan sistem operasi Ubuntu.\
 \
 Gambar berikut merupakan tampilan hasil klasifikasi dengan IDS.\
 ![image](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/267f5eb1-3829-4f0a-926d-5a297d2477c1)
