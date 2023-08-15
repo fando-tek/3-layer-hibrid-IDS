@@ -1,7 +1,6 @@
 ## IDS dengan 3 lapisan pembelajaran hibrid
 Untuk menguji kinerja model hibrid maka digunakan IDS yang dimodifikasi dari CICflowmeter berbasis python. IDS ini hanya digunakan untuk tujuan simulasi dan tidak digunakan secara langsung untuk menangani serangan yang sebenarnya.\
 \
-\
 IDS melakukan analisis dan klasifikasi pada aliran lalu lintas yang ditangkap. Aliran lalu lintas merupakan kumpulan dari beberapa paket yang saling terkait, memiliki kuintupel yang sama, yaitu IP sumber, IP tujuan, port sumber, port tujuan, dan protokol.
 Jika analisis dan klasifikasi dilakukan secara offline, IDS akan dihentikan setelah selesai menganalisis dan mengklasifikasikan semua aliran lalu lintas pada file PCAP. Sedangkan jika dilakukan secara real time, IDS akan terus melakukan analisis dan klasifikasi tanpa batasan waktu. \
 \
