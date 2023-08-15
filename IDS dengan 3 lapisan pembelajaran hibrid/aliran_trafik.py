@@ -12,11 +12,10 @@ from datetime import datetime
 import pandas as pd
 
 WAKTU_KADALUARSA = 40
-MACHINE_LEARNING_API = "http://localhost:8000/predict"
 BATAS_PAKET = 100
 
 class aliran_jaringan(DefaultSession):
-    """Creates a list of network flows."""
+    """ list aliran trafik. """
 
     def __init__(self, *args, **kwargs):
         self.flows = {}
@@ -75,7 +74,6 @@ class aliran_jaringan(DefaultSession):
             elif "UDP" not in packet:
                 return
         try:
-            # Creates a key variable to check
             packet_flow_key = get_packet_flow_key(packet, direction)
             flow = self.flows.get((packet_flow_key, count))
         except Exception:
@@ -84,23 +82,18 @@ class aliran_jaringan(DefaultSession):
         self.packets_count += 1
         wrpcap(self.pcap_file, packet, append=True)
 
-        # If there is no forward flow with a count of 0
         if flow is None:
-            # There might be one of it in reverse
             direction = PacketDirection.REVERSE
             packet_flow_key = get_packet_flow_key(packet, direction)
             flow = self.flows.get((packet_flow_key, count))
 
         if flow is None:
-            # If no flow exists create a new flow
             direction = PacketDirection.FORWARD
             flow = Flow(packet, direction)
             packet_flow_key = get_packet_flow_key(packet, direction)
             self.flows[(packet_flow_key, count)] = flow
 
         elif (packet.time - flow.latest_timestamp) > WAKTU_KADALUARSA:
-            # If the packet exists in the flow but the packet is sent
-            # after too much of a delay than it is a part of a new flow.
             expired = WAKTU_KADALUARSA
             while (packet.time - flow.latest_timestamp) > expired:
                 count += 1
@@ -112,7 +105,6 @@ class aliran_jaringan(DefaultSession):
                     self.flows[(packet_flow_key, count)] = flow
                     break
         elif "TCP" in packet and "F" in str(packet.flags):
-            # If it has FIN flag then early collect flow and continue
             flow.add_packet(packet, direction)
             self.pembersihan_paket(packet.time)
             return
@@ -126,7 +118,6 @@ class aliran_jaringan(DefaultSession):
         return self.flows.values()
 
     def pembersihan_paket(self, latest_time):
-        # TODO: Garbage Collection / Feature Extraction should have a separate thread
                   
         keys = list(self.flows.keys())
         for k in keys:
