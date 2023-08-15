@@ -22,8 +22,7 @@ def main(input_file, nama_file, output_dir):
     print(f"Lama waktu membuat klasifikasi: {round(s_trafik - m_trafik, 2)} detik")
 
 def pemantauan_jaringan(input_file, output_mode, output_file, output_dir):
-    # Generate new flow session
-    #NewFlowSession = generate_session_class(output_mode, output_file)
+    # NewFlowSession = generate_session_class(output_mode, output_file)
     NewFlowSession = generate_session_class(output_mode, os.path.join(output_dir, f"{output_file}"))
 
     if input_file is not None:
