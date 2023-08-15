@@ -8,6 +8,7 @@ Algoritma	Accuracy	Precision	Recall	F1-score
 Hasil Evaluasi Model Hibrid dengan dataset rasio 3 banding 1 	997,618	991,901	968,809	979,508
 ![image](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/ee343524-708e-4c7e-a2d0-0bbc7382e27d)
 |Hasil Evaluasi Model Hibrid dengan dataset rasio 3 banding 1|
+|---|
 |	Accuracy|	Precision|	Recall|	F1-score|
 |---|---|---|---|
  	99,7618	99,1901	96,8809	97,9508
