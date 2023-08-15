@@ -5,7 +5,7 @@ Setelah mendapatkan 96 kombinasi nilai hyperparameter, f1-score dari kombinasi n
 \
 ![model hibrid](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/587da801-672b-4a9e-9038-cf2d80f215be)\
 \
-Pada tahap ini, dilakukan pembangunan model pada setiap lapisan dari masing-masing dataset (rasio 1:1, 2:1, 3:1 dan 5:1) dengan menggunakan nilai hyperparameter terbaik yang telah didapat dari tahap tuning.\
+Pada tahap ini, dilakukan pembangunan model pada setiap lapisan dari masing-masing dataset (rasio 1:1, 2:1, 3:1 dan 5:1) dengan menggunakan nilai hyperparameter terbaik yang telah didapat dari tahap tuning.
 ```
 - Pada lapisan satu, digunakan algoritma LSTM untuk klasifikasi dua kelas (biner) dengan label "1" menyatakan kelas serangan dan "0" menyatakan kelas normal.
 - Pada lapisan dua, digunakan algoritma RF untuk klasifikasi dua kelas (biner) dengan label attack menyatakan kelas serangan dan label benign menyatakan kelas normal.
