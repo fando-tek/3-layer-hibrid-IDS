@@ -10,4 +10,4 @@ Hasil Evaluasi Model Hibrid dengan dataset rasio 3 banding 1 	997,618	991,901	9
 ### Hasil Evaluasi Model Hibrid dengan dataset rasio 3 banding 1
 |	Accuracy|	Precision|	Recall|	F1-score|
 |---|---|---|---|
- 	99,7618	99,1901	96,8809	97,9508
+|99,7618 %|99,1901 %|	96,8809 %|	97,9508 %|
