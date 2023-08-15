@@ -237,7 +237,7 @@ class Flow:
                     self.forward_bulk_last_timestamp = packet.time
                     self.forward_bulk_count_tmp = 1
                     self.forward_bulk_size_tmp = payload_size
-                else:  # Add to bulk
+                else: 
                     self.forward_bulk_count_tmp += 1
                     self.forward_bulk_size_tmp += payload_size
                     if self.forward_bulk_count_tmp == constants.BULK_BOUND:
@@ -270,7 +270,7 @@ class Flow:
                     self.backward_bulk_last_timestamp = packet.time
                     self.backward_bulk_count_tmp = 1
                     self.backward_bulk_size_tmp = payload_size
-                else:  # Add to bulk
+                else: 
                     self.backward_bulk_count_tmp += 1
                     self.backward_bulk_size_tmp += payload_size
                     if self.backward_bulk_count_tmp == constants.BULK_BOUND:
