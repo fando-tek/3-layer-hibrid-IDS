@@ -7,5 +7,6 @@ Simulasi serangan menggunakan dua perangkat yang berada dalam jaringan yang sama
 Pengujian IDS secara offline, dilakukan menggunakan Kali Linux untuk menghasilkan lalu lintas normal dan serangan (DoS, brute force dan probe) yang kemudian di lihat hasilnya. Tabel 4.29 menunjukkan keberhasilan IDS dengan model hibrid mengklasifikasikan lalu lintas normal dan serangan. 
 4.8.2	Pengujian IDS secara real time
 Pengujian IDS dengan menggunakan pembelajaran mesin hibrid juga dilakukan secara real time, dimana serangan dilakukan dari sistem Kali Linux (penyerang) yang menyerang sistem Ubuntu (korban). Data lalu lintas normal dan serangan ditangkap oleh IDS dan langsung dianalisis untuk diklasifikasikan. 
-Gambar berikut merupakan tampilan hasil klasifikasi dengan IDS 
+Gambar berikut merupakan tampilan hasil klasifikasi dengan IDS.\
+\
 ![image](https://github.com/fando-tek/Hybrid-learning-IDS/assets/81504312/267f5eb1-3829-4f0a-926d-5a297d2477c1)
