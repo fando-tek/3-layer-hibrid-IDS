@@ -46,9 +46,6 @@ class Model:
         
         # membuat objek 
         self.normalisasi = normalisasi
-        #self.fitur_dihapus_1 = fitur_dihapus_1
-        #self.fitur_dihapus_2 = fitur_dihapus_2
-        #self.fitur_dihapus_3 = fitur_dihapus_3
         self.fitur_dihapus_1 = fitur_dihapus_1['0'].values.tolist()
         self.fitur_dihapus_2 = fitur_dihapus_2['0'].values.tolist()
         self.fitur_dihapus_3 = fitur_dihapus_3['0'].values.tolist()
